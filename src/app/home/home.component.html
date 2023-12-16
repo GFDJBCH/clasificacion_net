@@ -1,0 +1,533 @@
+
+<form action="#">
+  <div class="card mb-7">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <div class="position-relative w-md-200px me-md-2">
+          <select #previoFiltroSucursal name="filtro-sucursal" id="filtro-sucursal" class="form-select">
+            <option value=""></option>
+          </select>
+        </div>
+        <div class="position-relative w-md-200px me-md-2">
+          <span class="svg-icon svg-icon-3 svg-icon-gray-500 position-absolute top-50 translate-middle ms-6">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
+                                <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
+                              </svg>
+                            </span>
+          <input type="text" class="form-control ps-10" name="search" id="search" placeholder="Buscar" autocomplete="off">
+        </div>
+        <div class="d-none align-items-center">
+          <button type="submit" class="btn btn-primary me-5">Buscar</button>
+          <a id="kt_horizontal_search_advanced_link" class="btn btn-link" data-bs-toggle="collapse" href="#kt_advanced_search_form">Búsqueda Avanzada</a>
+        </div>
+      </div>
+      <div class="collapse" id="kt_advanced_search_form">
+        <div class="separator separator-dashed mt-9 mb-6"></div>
+        <div class="row g-8 mb-8">
+          <div class="col-xxl-12">
+            <div class="row g-8">
+              <div class="col-lg-2">
+                <label class="fs-6 form-label fw-bolder text-dark">Folio</label>
+                <input type="text" class="form-control form-control form-control-solid" name="filtro_folio" id="filtro_folio" autocomplete="off">
+              </div>
+              <div class="col-lg-3">
+                <label class="fs-6 form-label fw-bolder text-dark">Cliente</label>
+                <select name="filtro_cliente" id="filtro_cliente" class="form-select form-select-solid" data-control="select2" data-placeholder="Buscar por cliente" data-hide-search="true">
+                  <option value=""></option>
+                  <option value="1">OUTOTEC MEXICO SA DE CV</option>
+                  <option value="2">DEACERO SAPI DE CV</option>
+                  <option value="3">DMTC TECHNOLOGY SERVICES S DE RL DE CV</option>
+                </select>
+              </div>
+              <div class="col-lg-3">
+                <label class="fs-6 form-label fw-bolder text-dark">Proveedor</label>
+                <select name="filtro_proveedor" id="filtro_proveedor" class="form-select form-select-solid" data-control="select2" data-placeholder="Buscar por proveedor" data-hide-search="true">
+                  <option value=""></option>
+                  <option value="1">OUTOTEC MEXICO SA DE CV</option>
+                  <option value="2">DEACERO SAPI DE CV</option>
+                  <option value="3">DMTC TECHNOLOGY SERVICES S DE RL DE CV</option>
+                </select>
+              </div>
+              <div class="col-lg-4">
+                <label class="fs-6 form-label fw-bolder text-dark">Seleccione estado</label>
+                <div class="nav-group nav-group-fluid">
+                  <label>
+                    <input type="radio" class="btn-check" name="filtro_estado" value="todos" checked="checked">
+                    <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bolder px-4 small">Todos</span>
+                  </label>
+                  <label>
+                    <input type="radio" class="btn-check" name="filtro_estado" value="pendientes">
+                    <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bolder px-4 small">Pendientes</span>
+                  </label>
+                  <label>
+                    <input type="radio" class="btn-check" name="filtro_estado" value="clasificando">
+                    <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bolder px-4 small">Clasificando</span>
+                  </label>
+                  <label>
+                    <input type="radio" class="btn-check" name="filtro_estado" value="pausa">
+                    <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bolder px-4 small">Esperando respuesta</span>
+                  </label>
+                  <label>
+                    <input type="radio" class="btn-check" name="filtro_estado" value="terminado">
+                    <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bolder px-4 small">Terminados</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="row" id="sctn_filtro_estados">
+  <div class="col-sm-12 col-md-3">
+    <div class="card mb-10" style="background-color: rgb(205,205,205);">
+      <div class="container-fluid py-4 ps-5 rounded-top">
+        <h1 class="card-title fs-3 text-dark m-0">Pendiente</h1>
+      </div>
+      <div class="card-body p-2 bg-light" id="sctn_pendiente" style="overflow-x: hidden; height: 60vh;">
+        <div *ngIf="listaPendiente.length == 0 && !cargandoPendiente && noResultadosPendiente">
+          <div class="card border border-light border-2 shadow-sm mb-2 animate__animated animate__fadeIn small d-flex justify-content-center align-items-center text-center h-50px">
+            <p class="m-0 text-muted">En este momento, no se ha asignado ningún previo a clasificar.</p>
+          </div>
+        </div>
+        <div *ngFor="let clasificacion of listaPendiente" class="card border-2 shadow-sm mb-2 small cursor-pointer filtrado_previo" [attr.data-sucursal]="clasificacion.idSucursal" style="border: rgb(205,205,205) solid 1px;" (click)="clasificar(clasificacion.id, clasificacion.ValorTexto)">
+          <div class="rounded-top container py-2 ps-5">
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <h1 class="card-title fs-5 m-0 text-truncate"
+                    title="{{clasificacion.clienteNombre}}">{{clasificacion.clienteNombre}}</h1>
+                <small>{{clasificacion.clienteCodigo}}</small>
+              </div>
+              <div class="col-sm-12 col-md-4 text-end">
+                <h1 class="card-title fs-5 m-0">{{clasificacion.fuente}}</h1>
+              </div>
+            </div>
+          </div>
+          <div class="card-body px-4 py-2">
+            <div class="row">
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Entrada:</p>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <p class="card-title m-0 text-muted">{{clasificacion.numeroEntrada}}</p>
+              </div>
+              <div class="col-sm-12 col-md-2">
+                <p class="card-title m-0 fw-bolder">Tipo:</p>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 text-muted text-truncate">{{clasificacion.tipoOperacionDescripcion}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Proveedor:</p>
+              </div>
+              <div class="col-sm-12 col-md-9">
+                <p class="card-title m-0 text-muted text-truncate text-truncate" title="{{clasificacion.proveedorNombre}}">{{clasificacion.proveedorNombre}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-6 text-center"></div>
+              <div class="col-sm-12 col-md-4">
+                <p class="card-title m-0 fw-bolder">Total de partidas:</p>
+              </div>
+              <div class="col-sm-12 col-md-2 text-center">
+                <p class="card-title m-0 text-muted text-truncate">{{clasificacion.totalPartidas}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer py-2 px-4">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <p class="card-title m-0 fw-bolder">Revisado por:</p>
+                <p class="card-title m-0 text-muted">{{clasificacion.registradoPor}}</p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <p class="card-title m-0 fw-bolder">Fecha de entrada:</p>
+                <p class="card-title m-0 text-muted">{{clasificacion.FechaCreado}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-3">
+    <div class="card mb-10" style="background-color: #4E96EF;">
+      <div class="container-fluid py-4 ps-5 rounded-top">
+        <h1 class="card-title text-white fs-3 m-0">Clasificando</h1>
+      </div>
+      <div class="card-body p-2 bg-light" id="sctn_clasificando" style="overflow-x: hidden; height: 60vh;">
+        <div *ngIf="listaClasificando.length == 0 && !cargandoClasificando && noResultadosClasificando">
+          <div class="card border border-light border-2 shadow-sm mb-2 animate__animated animate__fadeIn small d-flex justify-content-center align-items-center text-center h-50px">
+            <p class="m-0 text-muted">En este momento, no se ha asignado ningún previo a clasificar.</p>
+          </div>
+        </div>
+        <div *ngFor="let clasificacion of listaClasificando" class="card border-2 shadow-sm mb-2 small cursor-pointer filtrado_previo" [attr.data-sucursal]="clasificacion.idSucursal" style="border: rgb(205,205,205) solid 1px;" (click)="clasificar(clasificacion.id, clasificacion.ValorTexto)">
+          <div class="rounded-top container py-2 ps-5">
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <h1 class="card-title fs-5 m-0 text-truncate"
+                    title="{{clasificacion.clienteNombre}}">{{clasificacion.clienteNombre}}</h1>
+                <small>{{clasificacion.clienteCodigo}}</small>
+              </div>
+              <div class="col-sm-12 col-md-4 text-end">
+                <h1 class="card-title fs-5 m-0">{{clasificacion.fuente}}</h1>
+              </div>
+            </div>
+          </div>
+          <div class="card-body px-4 py-2">
+            <div class="row">
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Entrada:</p>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 text-muted">{{clasificacion.numeroEntrada}}</p>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Tipo:</p>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 text-muted">{{clasificacion.tipoOperacion}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Proveedor:</p>
+              </div>
+              <div class="col-sm-12 col-md-9">
+                <p class="card-title m-0 text-muted text-truncate" title="{{clasificacion.proveedorNombre}}">{{clasificacion.proveedorNombre}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <p class="card-title m-0 fw-bolder">Clasificado:</p>
+              </div>
+              <div class="col-sm-12 col-md-2 text-center">
+                <p class="card-title m-0 {{(clasificacion.sinClasificar <= clasificacion.totalPartidas) ? 'text-danger': 'text-success'}}">{{clasificacion.sinClasificar}}</p>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <p class="card-title m-0 fw-bolder">Total:</p>
+              </div>
+              <div class="col-sm-12 col-md-2 text-center">
+                <p class="card-title m-0 text-muted text-truncate">{{clasificacion.totalPartidas}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer py-2 px-4">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <p class="card-title m-0 fw-bolder">Revisado por:</p>
+                <p class="card-title m-0 text-muted">{{clasificacion.registradoPor}}</p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <p class="card-title m-0 fw-bolder">Fecha de entrada:</p>
+                <p class="card-title m-0 text-muted">{{clasificacion.FechaCreado}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-3">
+    <div class="card mb-10 bg-warning">
+      <div class="container-fluid py-4 ps-5 rounded-top">
+        <h1 class="card-title fs-3 text-dark m-0">Esperando respuesta</h1>
+      </div>
+      <div class="card-body p-2 bg-light" id="sctn_pausa" style="overflow-x: hidden; height: 60vh;">
+        <div *ngIf="listaPausa.length == 0 && !cargandoPausa && noResultadosPausa">
+          <div class="card border border-light border-2 shadow-sm mb-2 animate__animated animate__fadeIn small d-flex justify-content-center align-items-center text-center h-50px">
+            <p class="m-0 text-muted">En este momento, no se ha asignado ningún previo en "esperando respuesta".</p>
+          </div>
+        </div>
+        <div *ngFor="let clasificacion of listaPausa" class="card border-2 shadow-sm mb-2 small cursor-pointer filtrado_previo" [attr.data-sucursal]="clasificacion.idSucursal" style="border: rgb(205,205,205) solid 1px;" (click)="clasificar(clasificacion.id, clasificacion.ValorTexto)">
+          <div class="rounded-top container py-2 ps-5">
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <h1 class="card-title fs-5 m-0 text-truncate"
+                    title="{{clasificacion.clienteNombre}}">{{clasificacion.clienteNombre}}</h1>
+                <small>{{clasificacion.clienteCodigo}}</small>
+              </div>
+              <div class="col-sm-12 col-md-4 text-end">
+                <h1 class="card-title fs-5 m-0">{{clasificacion.fuente}}</h1>
+              </div>
+            </div>
+          </div>
+          <div class="card-body px-4 py-2">
+            <div class="row">
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Entrada:</p>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 text-muted">{{clasificacion.numeroEntrada}}</p>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Tipo:</p>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 text-muted">{{clasificacion.tipoOperacion}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Proveedor:</p>
+              </div>
+              <div class="col-sm-12 col-md-9">
+                <p class="card-title m-0 text-muted text-truncate" title="{{clasificacion.proveedorNombre}}">{{clasificacion.proveedorNombre}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <p class="card-title m-0 fw-bolder">Clasificado:</p>
+              </div>
+              <div class="col-sm-12 col-md-2 text-center">
+                <p class="card-title m-0 {{(clasificacion.sinClasificar <= clasificacion.totalPartidas) ? 'text-danger': 'text-success'}}">{{clasificacion.sinClasificar}}</p>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <p class="card-title m-0 fw-bolder">Total:</p>
+              </div>
+              <div class="col-sm-12 col-md-2 text-center">
+                <p class="card-title m-0 text-muted text-truncate">{{clasificacion.totalPartidas}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer py-2 px-4">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <p class="card-title m-0 fw-bolder">Revisado por:</p>
+                <p class="card-title m-0 text-muted">{{clasificacion.registradoPor}}</p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <p class="card-title m-0 fw-bolder">Fecha de entrada:</p>
+                <p class="card-title m-0 text-muted">{{clasificacion.FechaCreado}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-3">
+    <div class="card mb-10" style="background-color: rgb(74,198,104);">
+      <div class="container-fluid py-4 ps-5 rounded-top">
+        <h1 class="card-title fs-3 text-white m-0">Terminados</h1>
+      </div>
+      <div class="card-body p-2 bg-light" id="sctn_terminado" style="overflow-x: hidden; height: 60vh;">
+        <div *ngIf="listaTerminado.length == 0 && !cargandoTerminado && noResultadosTerminado">
+          <div class="card border border-light border-2 shadow-sm mb-2 animate__animated animate__fadeIn small d-flex justify-content-center align-items-center text-center h-50px">
+            <p class="m-0 text-muted">En este momento, no se ha asignado ningún previo a terminado.</p>
+          </div>
+        </div>
+        <div *ngFor="let clasificacion of listaTerminado" class="card border-2 shadow-sm mb-2 small cursor-pointer filtrado_previo" [attr.data-sucursal]="clasificacion.idSucursal" style="border: rgb(205,205,205) solid 1px;" (click)="clasificar(clasificacion.id, clasificacion.ValorTexto)">
+          <div class="rounded-top container py-2 ps-5">
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <h1 class="card-title fs-5 m-0 text-truncate"
+                    title="{{clasificacion.clienteNombre}}">{{clasificacion.clienteNombre}}</h1>
+                <small>{{clasificacion.clienteCodigo}}</small>
+              </div>
+              <div class="col-sm-12 col-md-4 text-end">
+                <h1 class="card-title fs-5 m-0">{{clasificacion.fuente}}</h1>
+              </div>
+            </div>
+          </div>
+          <div class="card-body px-4 py-2">
+            <div class="row">
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Entrada:</p>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 text-muted">{{clasificacion.numeroEntrada}}</p>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Tipo:</p>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 text-muted">{{clasificacion.tipoOperacion}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-3">
+                <p class="card-title m-0 fw-bolder">Proveedor:</p>
+              </div>
+              <div class="col-sm-12 col-md-9">
+                <p class="card-title m-0 text-muted text-truncate" title="{{clasificacion.proveedorNombre}}">{{clasificacion.proveedorNombre}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <p class="card-title m-0 fw-bolder">Clasificado:</p>
+              </div>
+              <div class="col-sm-12 col-md-2 text-center">
+                <p class="card-title m-0 {{(clasificacion.sinClasificar <= clasificacion.totalPartidas) ? 'text-danger': 'text-success'}}">{{clasificacion.sinClasificar}}</p>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <p class="card-title m-0 fw-bolder">Total:</p>
+              </div>
+              <div class="col-sm-12 col-md-2 text-center">
+                <p class="card-title m-0 text-muted text-truncate">{{clasificacion.totalPartidas}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer py-2 px-4">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <p class="card-title m-0 fw-bolder">Revisado por:</p>
+                <p class="card-title m-0 text-muted">{{clasificacion.registradoPor}}</p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <p class="card-title m-0 fw-bolder">Fecha de entrada:</p>
+                <p class="card-title m-0 text-muted">{{clasificacion.FechaCreado}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="row">
+  <div class="col-sm-12 col-md" *ngFor="let estado of statusList">
+    <div class="card mb-10" style="background-color: rgb(205,205,205);">
+      <div class="container-fluid py-4 ps-5 rounded-top">
+        <h1 class="card-title fs-3 text-dark m-0">{{estado.ValorTexto}}</h1>
+      </div>
+      <div class="card-body p-2 bg-light" style="overflow-x: hidden; height: 60vh;">
+
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<!--end::Row-->
+<!--comentario: Drawer Nuevo previo-->
+<div
+  id="nuevo_previo_drawer"
+  class="bg-white"
+  data-kt-drawer="true"
+  data-kt-drawer-activate="true"
+  data-kt-drawer-toggle="#btn_nuevo_previo"
+  data-kt-drawer-close="#nuevo_previo_drawer_dismiss_close"
+  data-kt-drawer-overlay="true"
+  data-kt-drawer-width="{default:'100%', 'md': '30%'}"
+>
+  <div class="card shadow-none rounded-0 w-100">
+    <div class="card-header rounded-0 bg-primary">
+      <h3 class="card-title fw-bolder text-white"><i class="bi bi-plus-circle fa-lg text-white me-2"></i> Nuevo previo</h3>
+    </div>
+    <div class="card-body">
+      <form id="frmPrevio" #frmNgPrevio class="form" action="#" autocomplete="off">
+        <input #previoId type="hidden" id="previo_general_id" name="previo_general_id">
+        <div class="fv-row mb-5">
+          <label for="previo_general_fuente" class="form-label fw-boldest text-uppercase fs-8 m-0 required">Fuente:</label>
+          <select #previoFuente id="previo_general_fuente" name="previo_general_fuente" class="form-select form-select-sm">
+            <option></option>
+            <option value="PREVIO">PREVIO</option>
+            <option value="MANUAL">MANUAL</option>
+          </select>
+        </div>
+        <div class="fv-row mb-5">
+          <label for="previo_general_referencia" class="form-label fw-boldest text-uppercase fs-8 m-0 required">Referencia:</label>
+          <input #previoReferencia type="text" class="form-control form-control-sm" id="previo_general_referencia"
+                 name="previo_general_referencia" placeholder="Referencia">
+        </div>
+        <div #previoEntradaSection class="fv-row mb-5">
+          <label for="previo_general_entrada" class="form-label fw-boldest text-uppercase fs-8 m-0">Entrada:</label>
+          <input #previoEntrada type="text" class="form-control form-control-sm" id="previo_general_entrada"
+                 name="previo_general_entrada" placeholder="Entrada">
+        </div>
+        <div class="fv-row mb-5">
+          <label for="previo_general_operacion" class="form-label fw-boldest text-uppercase fs-8 m-0">Tipo de operación:</label>
+          <select #previoOperacion id="previo_general_operacion" name="previo_general_operacion" class="form-select form-select-sm">
+            <option></option>
+          </select>
+        </div>
+        <div class="fv-row mb-5">
+          <label for="previo_general_clave" class="form-label fw-boldest text-uppercase fs-8 m-0">Clave de pedimento:</label>
+          <select #previoClave id="previo_general_clave" name="previo_general_clave" class="form-select form-select-sm">
+            <option></option>
+          </select>
+        </div>
+        <div class="fv-row mb-5">
+          <label for="previo_general_zona" class="form-label fw-boldest text-uppercase fs-8 m-0">Zona:</label>
+          <select #previoZona id="previo_general_zona" name="previo_general_zona" class="form-select form-select-sm">
+            <option></option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="card-footer">
+      <!--begin::Dismiss button-->
+      <button #btnAddPrevio type="submit" form="frmPrevio" class="btn btn-primary">Guardar información</button>
+      <button type="button" class="btn btn-light" data-kt-drawer-dismiss="true">Cerrar</button>
+      <!--end::Dismiss button-->
+    </div>
+  </div>
+</div>
+<!--comentario: Drawer Seleccionar previo-->
+<div
+  id="drawer-seleccionar-previo"
+  class="bg-white"
+  data-kt-drawer="true"
+  data-kt-drawer-activate="true"
+  data-kt-drawer-toggle="#btn_nuevo_previo"
+  data-kt-drawer-close="#nuevo_previo_drawer_dismiss_close"
+  data-kt-drawer-overlay="false"
+  data-kt-drawer-width="{default:'100%', 'md': '69%'}"
+  data-kt-drawer-direction="start"
+>
+  <div class="card shadow-none rounded-0 w-100">
+    <div class="card-header rounded-0 bg-primary">
+      <h3 class="card-title fw-bolder text-white"><i class="bi bi-list-task fa-lg text-white me-2"></i> Seleccionar previo</h3>
+    </div>
+    <div class="card-body scroll-y">
+
+      <div class="d-flex justify-content-end" data-kt-docs-table-toolbar="base">
+        <div class="w-200px me-5 d-none">
+          <select #previoFiltroUrgente id="previo_filtro_urgente" name="previo_filtro_urgente" class="form-select form-select-sm">
+            <option></option>
+            <option value="SI">SI</option>
+            <option value="NO">NO</option>
+          </select>
+        </div>
+        <div class="w-250px me-5">
+          <select #previoFiltroEstado id="previo_filtro_estado" name="previo_filtro_estado" class="form-select form-select-sm">
+            <option></option>
+          </select>
+        </div>
+        <input #previoFiltro type="text" class="form-control form-control-sm w-200px me-5" id="previo_filtro"
+               name="previo_filtro" placeholder="Buscar...">
+        <button #previoFiltroLimpiar type="button" class="btn btn-primary btn-sm" id="previo_filtro_limpiar" name="previo_filtro_limpiar">
+          <span class="svg-icon svg-icon-5 rotate-180 me-3 my-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path opacity="0.3"
+      d="M8.38 22H21C21.2652 22 21.5196 21.8947 21.7071 21.7072C21.8946 21.5196 22 21.2652 22 21C22 20.7348 21.8946 20.4804 21.7071 20.2928C21.5196 20.1053 21.2652 20 21 20H10L8.38 22Z"
+      fill="black"/>
+<path
+  d="M15.622 15.6219L9.855 21.3879C9.66117 21.582 9.43101 21.7359 9.17766 21.8409C8.92431 21.946 8.65275 22 8.37849 22C8.10424 22 7.83268 21.946 7.57933 21.8409C7.32598 21.7359 7.09582 21.582 6.90199 21.3879L2.612 17.098C2.41797 16.9042 2.26404 16.674 2.15903 16.4207C2.05401 16.1673 1.99997 15.8957 1.99997 15.6215C1.99997 15.3472 2.05401 15.0757 2.15903 14.8224C2.26404 14.569 2.41797 14.3388 2.612 14.145L8.37801 8.37805L15.622 15.6219Z"
+  fill="black"/>
+<path opacity="0.3"
+      d="M8.37801 8.37805L14.145 2.61206C14.3388 2.41803 14.569 2.26408 14.8223 2.15906C15.0757 2.05404 15.3473 2 15.6215 2C15.8958 2 16.1673 2.05404 16.4207 2.15906C16.674 2.26408 16.9042 2.41803 17.098 2.61206L21.388 6.90198C21.582 7.0958 21.736 7.326 21.841 7.57935C21.946 7.83269 22 8.10429 22 8.37854C22 8.65279 21.946 8.92426 21.841 9.17761C21.736 9.43096 21.582 9.66116 21.388 9.85498L15.622 15.6219L8.37801 8.37805Z"
+      fill="black"/>
+</svg>
+          </span>
+          Limpiar
+        </button>
+      </div>
+
+      <div class="table-responsive">
+        <table id="tabla-previos" class="table table-sm table-row-bordered gy-3 gs-7 border rounded w-100 align-middle" style="width: 100%;">
+          <thead class="fs-8 text-gray-400 text-uppercase"></thead>
+          <tbody class="fs-8 center"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card-footer text-end">
+      <button type="button" class="btn btn-light" data-kt-drawer-dismiss="true">Cerrar</button>
+    </div>
+  </div>
+</div>

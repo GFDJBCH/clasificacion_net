@@ -1,0 +1,18 @@
+:root {
+  --bs-tertiary: #011832;
+  --bs-tertiary-rgb: rgb(1,24,50);
+}
+
+.text-tertiary {
+  color: var(--bs-tertiary) !important;
+}
+
+.bg-tertiary {
+  background-color: var(--bs-tertiary) !important;
+}
+
+.btn-check:checked + .btn.btn-active-light-tertiary, .btn-check:active + .btn.btn-active-light-tertiary, .btn.btn-active-light-tertiary:focus:not(.btn-active), .btn.btn-active-light-tertiary:hover:not(.btn-active), .btn.btn-active-light-tertiary:active:not(.btn-active), .btn.btn-active-light-tertiary.active, .btn.btn-active-light-tertiary.show, .show > .btn.btn-active-light-tertiary {
+  color: #011832;
+  border-color: #415265;
+  background-color: #415265 !important;
+}

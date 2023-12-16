@@ -1,0 +1,1191 @@
+
+<!--begin::Row-->
+<div class="card shadow-sm mb-10">
+  <div class="bg-primary py-4 ps-5 rounded-top">
+    <h1 class="card-title fs-3 text-white m-0">Información general</h1>
+  </div>
+  <div class="card-body py-4 px-1" id="sctn_general_info">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-1">
+          <label class="form-label fw-bolder d-block">Fuente:</label>
+          <label class="form-label d-block">{{dataPrevio.fuente}}</label>
+        </div>
+        <div class="col-sm-12 col-md-2">
+          <label class="form-label fw-bolder d-block">Referencia:</label>
+          <label class="form-label d-block">{{dataPrevio.referencia}}</label>
+        </div>
+        <div class="col-sm-12 col-md-2">
+          <label class="form-label fw-bolder d-block">Entrada:</label>
+          <label class="form-label d-block">{{dataPrevio.numeroEntrada}}</label>
+        </div>
+        <div class="col-sm-12 col-md-2">
+          <label class="form-label fw-bolder d-block">Tipo de operación:</label>
+          <label class="form-label d-block">{{dataPrevio.tipoOperacionDescripcion}}</label>
+        </div>
+        <div class="col-sm-12 col-md-3">
+          <label class="form-label fw-bolder d-block">Clave de pedimento:</label>
+          <label class="form-label d-block text-truncate" title="{{dataPrevio.clavePedimentoDescripcion}}">{{dataPrevio.clavePedimentoDescripcion}}</label>
+        </div>
+        <div class="col-sm-12 col-md-2">
+          <label class="form-label fw-bolder d-block">Zona:</label>
+          <label class="form-label d-block">{{dataPrevio.zonaDescripcion}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card shadow-sm mb-10">
+  <div class="bg-primary py-4 ps-5 rounded-top">
+    <h1 class="card-title fs-3 text-white m-0">Encabezado de factura</h1>
+  </div>
+  <div class="card-body py-4 px-1" id="sctn_invoice_header">
+    <div class="container-fluid">
+      <div class="row py-1">
+        <div class="col-sm-12 col-md-2"><h3 class="m-0 fs-5">Código de cliente:</h3></div>
+        <div class="col-sm-12 col-md-2"><h3 class="m-0 text-muted fw-normal fs-6">{{dataPrevio.clienteCodigo}}</h3></div>
+        <div class="col-sm-12 col-md-2"><h3 class="m-0 fs-5">Nombre del cliente:</h3></div>
+        <div class="col-sm-12 col-md-6"><h3 class="m-0 text-muted fw-normal fs-6">{{dataPrevio.clienteNombre}}</h3></div>
+      </div>
+      <div class="row py-1">
+        <div class="col-sm-12 col-md-2"><h3 class="m-0 fs-5">Código de proveedor:</h3></div>
+        <div class="col-sm-12 col-md-2"><h3 class="m-0 text-muted fw-normal fs-6">{{dataPrevio.proveedorCodigo}}</h3></div>
+        <div class="col-sm-12 col-md-2"><h3 class="m-0 fs-5">Nombre de proveedor:</h3></div>
+        <div class="col-sm-12 col-md-6"><h3 class="m-0 text-muted fw-normal fs-6">{{dataPrevio.proveedorNombre}}</h3></div>
+      </div>
+      <div class="row py-1">
+        <div class="col-sm-12 col-md-3">
+          <h3 class="m-0 fs-5">Entrada: <span class="ms-3 text-muted fw-normal fs-6">{{dataPrevio.numeroEntrada}}</span></h3>
+        </div>
+        <div class="col-sm-12 col-md-3">
+          <h3 class="m-0 fs-5">Fecha entrada: <span class="ms-3 text-muted fw-normal fs-6">{{dataPrevio.FechaCreado}}</span></h3>
+        </div>
+        <div class="col-sm-12 col-md-3">
+          <h3 class="m-0 fs-5">Factura: <span class="ms-3 text-muted fw-normal fs-6">{{dataPrevio.facturaNumero}}</span></h3>
+        </div>
+        <div class="col-sm-12 col-md-3">
+          <h3 class="m-0 fs-5">Fecha factura: <span class="ms-3 text-muted fw-normal fs-6">{{dataPrevio.facturaFecha}}</span></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form action="#">
+  <!--begin::Card-->
+  <div class="card mb-7">
+    <!--begin::Card body-->
+    <div class="card-body">
+      <!--begin::Compact form-->
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="d-flex align-items-center">
+            <!--begin::Input group-->
+            <div class="position-relative w-md-400px me-md-2">
+              <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+              <span class="svg-icon svg-icon-3 svg-icon-gray-500 position-absolute top-50 translate-middle ms-6">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
+															<path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
+														</svg>
+													</span>
+              <!--end::Svg Icon-->
+              <input id="previo-buscar-partida" type="text" class="form-control form-control-solid ps-10" name="search" value="" placeholder="Buscar" />
+            </div>
+            <!--end::Input group-->
+            <!--begin:Action-->
+            <div class="d-flex align-items-center">
+              <button type="submit" class="btn btn-primary me-5">Buscar</button>
+              <a id="kt_horizontal_search_advanced_link" class="btn btn-link d-none" data-bs-toggle="collapse" href="#kt_advanced_search_form">Búsqueda Avanzada</a>
+            </div>
+            <!--end:Action-->
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 text-end">
+          <button #btnNewPrevio type="button" class="btn btn-primary me-5" id="btnNewPrevio">Nueva partida</button>
+        </div>
+      </div>
+      <!--end::Compact form-->
+      <!--begin::Advance form-->
+      <div class="collapse" id="kt_advanced_search_form">
+        <!--begin::Separator-->
+        <div class="separator separator-dashed mt-9 mb-6"></div>
+        <!--end::Separator-->
+        <!--begin::Row-->
+        <div class="row g-8">
+          <!--begin::Col-->
+          <div class="col-xxl-7">
+            <!--begin::Row-->
+            <div class="row g-8">
+              <!--begin::Col-->
+              <div class="col-lg-4">
+                <label class="fs-6 form-label fw-bolder text-dark">Cantidad mín. de bultos</label>
+                <!--begin::Dialer-->
+                <div class="position-relative" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="1000" data-kt-dialer-step="1" data-kt-dialer-decimals="2">
+                  <!--begin::Decrease control-->
+                  <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease">
+                    <!--begin::Svg Icon | path: icons/duotune/general/gen042.svg-->
+                    <span class="svg-icon svg-icon-1">
+																			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																				<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+																				<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="black" />
+																			</svg>
+																		</span>
+                    <!--end::Svg Icon-->
+                  </button>
+                  <!--end::Decrease control-->
+                  <!--begin::Input control-->
+                  <input type="text" class="form-control form-control-solid border-0 ps-12" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="50" />
+                  <!--end::Input control-->
+                  <!--begin::Increase control-->
+                  <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase">
+                    <!--begin::Svg Icon | path: icons/duotune/general/gen041.svg-->
+                    <span class="svg-icon svg-icon-1">
+																			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																				<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+																				<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="black" />
+																				<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="black" />
+																			</svg>
+																		</span>
+                    <!--end::Svg Icon-->
+                  </button>
+                  <!--end::Increase control-->
+                </div>
+                <!--end::Dialer-->
+              </div>
+              <!--end::Col-->
+              <!--begin::Col-->
+              <div class="col-lg-4">
+                <label class="fs-6 form-label fw-bolder text-dark">Cantidad máx. de bultos</label>
+                <!--begin::Dialer-->
+                <div class="position-relative" data-kt-dialer="true" data-kt-dialer-min="100" data-kt-dialer-max="10000" data-kt-dialer-step="1" data-kt-dialer-decimals="2">
+                  <!--begin::Decrease control-->
+                  <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease">
+                    <!--begin::Svg Icon | path: icons/duotune/general/gen042.svg-->
+                    <span class="svg-icon svg-icon-1">
+																			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																				<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+																				<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="black" />
+																			</svg>
+																		</span>
+                    <!--end::Svg Icon-->
+                  </button>
+                  <!--end::Decrease control-->
+                  <!--begin::Input control-->
+                  <input type="text" class="form-control form-control-solid border-0 ps-12" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="100" />
+                  <!--end::Input control-->
+                  <!--begin::Increase control-->
+                  <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase">
+                    <!--begin::Svg Icon | path: icons/duotune/general/gen041.svg-->
+                    <span class="svg-icon svg-icon-1">
+																			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																				<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+																				<rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="black" />
+																				<rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="black" />
+																			</svg>
+																		</span>
+                    <!--end::Svg Icon-->
+                  </button>
+                  <!--end::Increase control-->
+                </div>
+                <!--end::Dialer-->
+              </div>
+              <!--end::Col-->
+              <!--begin::Col-->
+              <div class="col-lg-4">
+                <label class="fs-6 form-label fw-bolder text-dark">Folio</label>
+                <input type="text" class="form-control form-control form-control-solid" name="city" />
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Col-->
+          <!--begin::Col-->
+          <div class="col-xxl-5">
+            <!--begin::Row-->
+            <div class="row g-8">
+              <!--begin::Col-->
+              <div class="col-lg-6">
+                <label class="fs-6 form-label fw-bolder text-dark">Seleccione grupo</label>
+                <!--begin::Radio group-->
+                <div class="nav-group nav-group-fluid">
+                  <!--begin::Option-->
+                  <label>
+                    <input type="radio" class="btn-check" name="type" value="has" checked="checked" />
+                    <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bolder px-4">Todos</span>
+                  </label>
+                  <!--end::Option-->
+                  <!--begin::Option-->
+                  <label>
+                    <input type="radio" class="btn-check" name="type" value="users" />
+                    <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bolder px-4">Revisión</span>
+                  </label>
+                  <!--end::Option-->
+                  <!--begin::Option-->
+                  <label>
+                    <input type="radio" class="btn-check" name="type" value="orders" />
+                    <span class="btn btn-sm btn-color-muted btn-active btn-active-primary fw-bolder px-4">Clasificador</span>
+                  </label>
+                  <!--end::Option-->
+                </div>
+                <!--end::Radio group-->
+              </div>
+              <!--end::Col-->
+              <!--begin::Col-->
+              <div class="col-lg-6">
+                <label class="fs-6 form-label fw-bolder text-dark">Finalizado</label>
+                <div class="form-check form-switch form-check-custom form-check-solid mt-1">
+                  <input class="form-check-input" type="checkbox" value="" id="flexSwitchChecked" checked="checked" />
+                  <label class="form-check-label" for="flexSwitchChecked">Activo</label>
+                </div>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Col-->
+        </div>
+        <!--end::Row-->
+      </div>
+      <!--end::Advance form-->
+    </div>
+    <!--end::Card body-->
+  </div>
+  <!--end::Card-->
+</form>
+<div class="d-flex flex-wrap flex-stack pb-7">
+  <!--begin::Title-->
+  <div class="d-flex flex-wrap align-items-center my-1">
+    <h3 class="fw-bolder me-5 my-1">{{listaPartidas.length}} partidas encontradas
+      <span class="text-gray-400 fs-6">por actualizaciones recientes ↓</span></h3>
+  </div>
+  <!--end::Title-->
+  <!--begin::Controls-->
+  <div class="d-flex flex-wrap my-1">
+    <!--begin::Tab nav-->
+    <ul class="nav nav-pills me-6 mb-2 mb-sm-0">
+      <li class="nav-item m-0">
+        <a class="btn btn-sm btn-icon btn-light btn-color-muted btn-active-primary me-3" data-bs-toggle="tab" href="#kt_project_users_card_pane">
+          <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
+          <span class="svg-icon svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+															<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																<rect x="5" y="5" width="5" height="5" rx="1" fill="#000000" />
+																<rect x="14" y="5" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
+																<rect x="5" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
+																<rect x="14" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
+															</g>
+														</svg>
+													</span>
+          <!--end::Svg Icon-->
+        </a>
+      </li>
+      <li class="nav-item m-0">
+        <a class="btn btn-sm btn-icon btn-light btn-color-muted btn-active-primary active" data-bs-toggle="tab" href="#kt_project_users_table_pane">
+          <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
+          <span class="svg-icon svg-icon-2">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z" fill="black" />
+															<path opacity="0.3" d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z" fill="black" />
+														</svg>
+													</span>
+          <!--end::Svg Icon-->
+        </a>
+      </li>
+    </ul>
+    <!--end::Tab nav-->
+    <!--begin::Actions-->
+    <div class="d-flex my-0">
+      <!--begin::Select-->
+      <select name="status" data-control="select2" data-hide-search="true" data-placeholder="Filter" class="form-select form-select-white form-select-sm w-150px me-5">
+        <option value="1">Recientemente actualizado</option>
+        <option value="2">Mes pasado</option>
+        <option value="3">Último cuatro meses</option>
+        <option value="4">Año pasado</option>
+      </select>
+      <!--end::Select-->
+      <!--begin::Select-->
+      <select name="status" data-control="select2" data-hide-search="true" data-placeholder="Export" class="form-select form-select-white form-select-sm w-100px">
+        <option value="1">Excel</option>
+        <option value="1">PDF</option>
+        <option value="2">Print</option>
+      </select>
+      <!--end::Select-->
+    </div>
+    <!--end::Actions-->
+  </div>
+  <!--end::Controls-->
+</div>
+<div class="tab-content">
+
+<!--  No. de parte-->
+<!--  Fracción-->
+<!--  UMT-->
+<!--  UMC-->
+<!--  Cant. Factura-->
+<!--  Valor comercial-->
+<!--  País Origen-->
+<!--  País Vendedor-->
+<!--  Estado-->
+
+  <div id="kt_project_users_card_pane" class="tab-pane fade">
+    <div class="row">
+      <div class="col-sm-12 col-md-6" *ngFor="let partida of listaPartidas; let i = index">
+        <div class="card shadow-sm mb-3" (click)="openDrawerPartida(partida.id, i)">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <p class="fs-4 mb-0 text-muted">No. de parte: <span class="fw-bolder text-primary">{{partida.partida_parte_numero}}</span></p>
+                <p class="text-muted mb-0">Descripción: <span class="text-primary">{{partida.clasificacion_descripcion}}</span></p>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="fw-bold text-gray-400">Estado fracción: <span class="text-active-warning float-end">
+                  <span [ngClass]="{'badge-danger': !partida.clasificacion_fraccion_numero, 'badge-success': partida.clasificacion_fraccion_numero}" class="w-100 badge m-0 py-1">{{partida.clasificacion_fraccion_numero ? 'Asignado' : 'Sin asignar'}}</span>
+                </span>
+                </div>
+                <div class="fw-bold text-gray-400 m-0">Fracción:
+                  <span [ngClass]="{'text-danger': !partida.clasificacion_fraccion_numero, 'text-success': partida.clasificacion_fraccion_numero}" class="fw-bold fs-6 float-end">
+                    {{partida.clasificacion_fraccion_numero ? partida.clasificacion_fraccion_numero : 'NO DISPONIBLE'}}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                <div class="fw-bold fs-6 text-muted">
+                  UMT:
+                  <div [ngClass]="{'text-muted': !partida.partida_umt_unidad, 'text-primary': partida.partida_umt_unidad}" class="float-end text-truncate">
+                    {{partida.partida_umt_unidad ? (partida.partida_umt_unidad + ' - ') : ''}}
+                    {{partida.partida_umt_descripcion ? (partida.partida_umt_descripcion) : 'NO DISPONIBLE'}}
+                  </div>
+                </div>
+
+                <div class="fw-bold fs-6 text-muted">
+                  UMC:
+                  <div [ngClass]="{'text-muted': !partida.partida_umc_unidad, 'text-primary': partida.partida_umc_unidad}" class="float-end text-truncate">
+                    {{partida.partida_umc_unidad ? (partida.partida_umc_unidad + ' - ') : 'NO DISPONIBLE'}}
+                    {{partida.partida_umc_descripcion ? (partida.partida_umc_descripcion) : 'NO DISPONIBLE'}}
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-3">
+                <div class="fw-bold fs-6 text-muted">
+                  Cant. Factura:
+                  <div
+                    [ngClass]="{'text-muted': !partida.partida_cantidad_factura, 'text-primary': partida.partida_cantidad_factura}"
+                    class="float-end text-truncate">
+                    {{partida.partida_cantidad_factura ? (partida.partida_cantidad_factura | number:'1.4-4') : '0.00'}}
+                  </div>
+                </div>
+                <div class="fw-bold fs-6 text-muted">
+                  Val. comercial:
+                  <div
+                    [ngClass]="{'text-muted': !partida.partida_cantidad_comercial, 'text-primary': partida.partida_cantidad_comercial}"
+                    class="float-end text-truncate">
+                    {{partida.partida_cantidad_comercial ? partida.partida_cantidad_comercial : '0.00'}}
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-5">
+                <div class="fw-bold fs-6 text-muted">
+                  País origen:
+                  <div [ngClass]="{'text-muted': !partida.partida_pais_origen_id, 'text-primary': partida.partida_pais_origen_id}" class="float-end text-truncate">
+                    {{partida.partida_pais_origen_nombre ? partida.partida_pais_origen_nombre : 'NO DISPONIBLE'}}
+                  </div>
+                </div>
+                <div class="fw-bold fs-6 text-muted">
+                  País vendedor:
+                  <div [ngClass]="{'text-muted': !partida.partida_pais_vendedor_id, 'text-primary': partida.partida_pais_vendedor_id}" class="float-end text-truncate">
+                    {{partida.partida_pais_vendedor_nombre ? partida.partida_pais_vendedor_nombre : 'NO DISPONIBLE'}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end::Tab pane-->
+  <!--begin::Tab pane-->
+  <div id="kt_project_users_table_pane" class="tab-pane fade show active">
+    <!--begin::Card-->
+    <div class="card card-flush">
+      <!--begin::Card body-->
+      <div class="card-body pt-0">
+        <!--begin::Table container-->
+        <div class="table-responsive">
+          <!--begin::Table-->
+          <table id="kt_project_users_table" class="table table-row-bordered table-row-dashed gy-4 align-middle fw-bolder">
+            <!--begin::Head-->
+            <thead class="fs-7 text-gray-400 text-uppercase">
+            <tr>
+              <th class="min-w-250px">No. de parte</th>
+              <th class="min-w-150px">Fracción</th>
+              <th class="min-w-90px">UMT</th>
+              <th class="min-w-90px">UMC</th>
+              <th class="min-w-90px">Cant. Factura</th>
+              <th class="min-w-90px">Valor comercial</th>
+              <th class="min-w-90px">País Origen</th>
+              <th class="min-w-90px">País Vendedor</th>
+              <th class="min-w-90px">Estado</th>
+              <th class="min-w-50px text-end">Detalles</th>
+            </tr>
+
+            <!--
+            Consecutivo
+            No. de parte / Descripcion
+            Estado/CLasif
+            cantidad factura
+            umc
+            valor comercial  (cantidadUnidad * CostoUnit = ValorComercial)
+            fraccion
+            Pais Origen
+            UMT
+            Pais vendedor
+
+
+            -->
+
+            </thead>
+            <!--end::Head-->
+            <!--begin::Body-->
+            <tbody class="fs-6">
+            <tr *ngFor="let partida of listaPartidas; let i = index" (click)="openDrawerPartida(partida.id, i)">
+            <td>
+                <div class="d-flex align-items-center">
+                  <div class="d-flex flex-column justify-content-center">
+                    <p class="mb-0 text-primary">{{partida.partida_parte_numero}}</p>
+                    <p class="mb-1 text-muted fw-normal">{{partida.clasificacion_descripcion}}</p>
+                  </div>
+                </div>
+              </td>
+              <td>{{partida.clasificacion_fraccion_numero}}</td>
+
+              <td>
+                <div [ngClass]="{'text-muted': !partida.partida_umt_unidad, 'text-dark': partida.partida_umt_unidad}" class="fw-bold fs-6">
+                  {{partida.partida_umt_unidad ? (partida.partida_umt_unidad + ' - ') : ''}}
+                  {{partida.partida_umt_descripcion ? (partida.partida_umt_descripcion) : 'NO DISPONIBLE'}}
+                </div>
+              </td>
+              <td>
+                <div [ngClass]="{'text-muted': !partida.partida_umc_unidad, 'text-dark': partida.partida_umc_unidad}" class="fw-bold fs-6">
+                  {{partida.partida_umc_unidad ? (partida.partida_umc_unidad + ' - ') : 'NO DISPONIBLE'}}
+                  {{partida.partida_umc_descripcion ? (partida.partida_umc_descripcion) : 'NO DISPONIBLE'}}
+                </div>
+              </td>
+
+              <td class="text-end pe-8">
+                <div [ngClass]="{'text-muted': !partida.partida_cantidad_factura, 'text-dark': partida.partida_cantidad_factura}" class="fw-bold fs-6">
+                  {{partida.partida_cantidad_factura ? (partida.partida_cantidad_factura | number:'1.4-4') : '0.0000'}}
+                </div>
+              </td>
+
+              <td class="text-end pe-8">
+                <div [ngClass]="{'text-muted': !partida.partida_cantidad_comercial, 'text-dark': partida.partida_cantidad_comercial}" class="fw-bold fs-6">
+                  {{partida.partida_cantidad_comercial ? partida.partida_cantidad_comercial : '0.0000'}}
+                </div>
+              </td>
+
+              <td>
+                <div [ngClass]="{'text-muted': !partida.partida_pais_origen_id, 'text-dark': partida.partida_pais_origen_id}" class="fw-bold fs-6">
+                  {{partida.partida_pais_origen_nombre ? partida.partida_pais_origen_nombre : 'NO DISPONIBLE'}}
+                </div>
+              </td>
+
+              <td>
+                <div [ngClass]="{'text-muted': !partida.partida_pais_vendedor_id, 'text-dark': partida.partida_pais_vendedor_id}" class="fw-bold fs-6">
+                  {{partida.partida_pais_vendedor_nombre ? partida.partida_pais_vendedor_nombre : 'NO DISPONIBLE'}}
+                </div>
+              </td>
+
+
+              <td>
+                <span [ngClass]="{'badge-danger': !partida.clasificacion_fraccion_numero, 'badge-success': partida.clasificacion_fraccion_numero}" class="w-100 badge m-0 py-1">{{partida.clasificacion_fraccion_numero ? 'Clasificado' : 'Sin clasificar'}}</span>
+              </td>
+              <td class="text-end">
+                <button type="button" class="btn btn-light btn-sm">Ver</button>
+              </td>
+            </tr>
+            </tbody>
+            <!--end::Body-->
+          </table>
+          <!--end::Table-->
+        </div>
+        <!--end::Table container-->
+      </div>
+      <!--end::Card body-->
+    </div>
+    <!--end::Card-->
+  </div>
+  <!--end::Tab pane-->
+</div>
+
+
+<div class="modal fade" id="mdlCambioEstado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white">Cambiar estado del previo</h5>
+        <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <select class="form-select" id="select-change-status">
+          <option></option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="save-change-status">Cambiar estado</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="mdl-agregar-imagenes" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white">Agregar imágenes</h5>
+        <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="form" method="post" enctype="multipart/form-data">
+          <div class="form-group row">
+            <label class="col-lg-2 col-form-label text-lg-right">Upload Files:</label>
+
+            <div class="col-lg-10">
+              <div class="dropzone dropzone-queue mb-2" id="kt_dropzonejs_example_2">
+                <div class="dropzone-panel mb-lg-0 mb-2">
+                  <a class="dropzone-select btn btn-sm btn-primary me-2">Attach files</a>
+                  <a class="dropzone-upload btn btn-sm btn-light-primary me-2">Upload All</a>
+                  <a class="dropzone-remove-all btn btn-sm btn-light-primary">Remove All</a>
+                </div>
+
+                <div class="dropzone-items wm-200px">
+                  <div class="dropzone-item" style="display:none">
+                    <div class="dropzone-file">
+                      <div class="dropzone-filename" title="some_image_file_name.jpg">
+                        <span data-dz-name>some_image_file_name.jpg</span>
+                        <strong>(<span data-dz-size>340kb</span>)</strong>
+                      </div>
+
+                      <div class="dropzone-error" data-dz-errormessage></div>
+                    </div>
+
+                    <div class="dropzone-progress">
+                      <div class="progress">
+                        <div
+                          class="progress-bar bg-primary"
+                          role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="dropzone-toolbar">
+                      <span class="dropzone-start"><i class="bi bi-play-fill fs-3"></i></span>
+                      <span class="dropzone-cancel" data-dz-remove style="display: none;"><i class="bi bi-x fs-3"></i></span>
+                      <span class="dropzone-delete" data-dz-remove><i class="bi bi-x fs-1"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--end::Row-->
+<!--begin::View component-->
+<div
+  id="kt_drawer_example_basic"
+  class="bg-white"
+  data-kt-drawer="true"
+  data-kt-drawer-activate="true"
+  data-kt-drawer-toggle="#btnNewPrevio"
+  data-kt-drawer-close="#kt_drawer_example_dismiss_close"
+  data-kt-drawer-overlay="true"
+  data-kt-drawer-width="80%"
+>
+
+  <div class="card w-100 rounded-0" id="drawer_partida">
+    <div class="card-header pe-5" id="drawer_partida_header">
+      <div class="card-title">
+        <div class="d-flex justify-content-center flex-column me-3">
+          <h5 class="fs-4 fw-bolder text-gray-900 text-hover-primary me-1 mb-2 lh-1"><i class="bi bi-person-fill fa-lg text-dark me-2"></i> Cliente: <strong class="text-primary">{{this.currentPartida.partida_cliente_referencia}}</strong></h5>
+          <div class="mb-0 lh-1">
+            <span class="fs-7 fw-bold text-muted">No. de parte: {{this.currentPartida.partida_parte_numero}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-toolbar">
+        <!--begin::Menu-->
+        <div id="navegacion-partida-counter" class="me-2">
+          <button (click)="navegar('primera');" class="btn btn-sm btn-icon btn-active-light-primary" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Primera">
+            <i class="bi bi-chevron-double-left fs-3"></i>
+          </button>
+          <button (click)="navegar('anterior');" class="btn btn-sm btn-icon btn-active-light-primary" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Anterior">
+            <i class="bi bi-chevron-left fs-3"></i>
+          </button>
+
+          <button id="navegacion-partida-numero" class="btn btn-sm btn-icon btn-active-light-primary" disabled data-bs-placement="bottom" data-bs-toggle="tooltip" title="Numero de partida"></button>
+
+          <button (click)="navegar('siguiente');" class="btn btn-sm btn-icon btn-active-light-primary" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Siguiente">
+            <i class="bi bi-chevron-right fs-3"></i>
+          </button>
+          <button (click)="navegar('ultima');" class="btn btn-sm btn-icon btn-active-light-primary" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Última">
+            <i class="bi bi-chevron-double-right fs-3"></i>
+          </button>
+        </div>
+        <!--end::Menu-->
+      </div>
+    </div>
+    <div class="card-body" id="drawer_partida_body">
+      <div class="scroll-y me-n5 pe-5" data-kt-element="messages" data-kt-scroll="true" data-kt-scroll-activate="true"
+           data-kt-scroll-height="auto"
+           data-kt-scroll-dependencies="#drawer_partida_header, #drawer_partida_footer"
+           data-kt-scroll-wrappers="#drawer_partida_body" data-kt-scroll-offset="0px">
+        <div class="row">
+          <div class="col-sm-12 col-md">
+            <form id="frmPartida" #frmNgPartida class="form" action="#" autocomplete="off">
+              <div class="row mb-2">
+                <div class="col-sm-12 col-md-3 div-manual">
+                  <div class="fv-row mb-3">
+                    <label for="detalle_parte_numero" class="form-label fw-boldest text-uppercase fs-8 m-0 required">No. parte:</label>
+                    <div class="input-group">
+                      <div class="flex-grow-1">
+                        <input #detalleParteNumero id="detalle_parte_numero"
+                               name="detalle_parte_numero"
+                               class="form-control form-control-sm rounded-0 rounded-start"
+                               placeholder="Seleccionar no. parte">
+                      </div>
+                      <button class="btn btn-primary btn-sm btn-icon" type="button"
+                              data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="bottom"
+                              title="Buscar no de parte" id="noParteDrawer"><i class="fas fa-search"></i></button>
+                      <button #noParteDrawerSave class="btn btn-primary btn-sm btn-icon" type="button"
+                              data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="bottom"
+                              title="Guardar no. de parte" id="noParteDrawerSave"><i class="fas fa-save"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-3">
+                  <div class="fv-row mb-3">
+                    <label for="detalle_parte_fraccion" class="form-label fw-boldest text-uppercase fs-8 m-0 required">Fracción:</label>
+                    <div class="input-group">
+                      <div class="flex-grow-1">
+                        <input #detalleParteFraccion id="detalle_parte_fraccion"
+                               name="detalle_parte_fraccion"
+                               class="form-control form-control-sm rounded-0 rounded-start"
+                               placeholder="Seleccionar fracción">
+                      </div>
+                      <button class="btn btn-primary btn-sm btn-icon" type="button"
+                              data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="top"
+                              title="Búsqueda avanzada de tarifa" id="btn_add_fraccion_drawer"><i class="fas fa-search"></i></button>
+                      <button class="btn btn-primary btn-sm btn-icon" type="button"
+                              data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="top"
+                              title="Aplicar clasificación arancelaria"><i class="fas fa-check"></i></button>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-3">
+                  <div class="fv-row mb-3">
+                    <label for="detalle_umt" class="form-label fw-boldest text-uppercase required fs-8 m-0">UMT:</label>
+                    <select #detalleUmt id="detalle_umt" name="detalle_umt"
+                            class="form-select form-select-sm">
+                      <option></option>
+                      <option value="{{umc.Id}}" *ngFor="let umc of this.listaUmc">{{umc.Unidad}} - {{umc.Descripcion}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md div-manual">
+                  <div class="fv-row mb-3">
+                    <label for="detalle_cantidad_tarifa" class="form-label fw-boldest text-uppercase fs-8 m-0">Cantidad tarifa:</label>
+                    <input #detalleCantidadTarifa type="number" step="0.1" class="form-control form-control-sm text-end" id="detalle_cantidad_tarifa"
+                           name="detalle_cantidad_tarifa" placeholder="Cantidad tarifa">
+                  </div>
+                </div>
+              </div>
+              <div class="fv-row mb-5">
+                <label for="detalle_descripcion" class="form-label fw-boldest text-uppercase fs-8 m-0 required">Descripción:</label>
+                <input #detalleParteDescripcion type="text" class="form-control form-control-sm" id="detalle_descripcion"
+                       name="detalle_descripcion" placeholder="Descripción" value="{{this.currentPartida.NoParteDescripcion}}">
+              </div>
+
+              <div class="div-manual">
+                <div class="row mb-2">
+                  <div class="col-sm-12 col-md-3">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_umf" class="form-label fw-boldest text-uppercase fs-8 m-0">UMF:</label>
+                      <select #detalleParteUMF id="detalle_umf" name="detalle_umf"
+                              class="form-select form-select-sm form-select-solid border" data-control="select2"
+                              data-placeholder="Seleccionar UMF" disabled>
+                        <option></option>
+                        <option value="{{umc.Id}}" *ngFor="let umc of this.listaUmc">{{umc.Unidad}} - {{umc.Descripcion}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-2">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_cantidad_factura" class="form-label fw-boldest text-uppercase fs-8 m-0">Cantidad factura:</label>
+                      <input #PartidaCantidadFactura type="number" step="0.1" class="form-control form-control-sm text-end text-muted" disabled id="detalle_cantidad_factura"
+                             name="detalle_cantidad_factura" placeholder="Cantidad factura">
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-3">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_umc" class="form-label fw-boldest text-uppercase fs-8 m-0">UMC:</label>
+                      <select #PartidaUMC id="detalle_umc" name="detalle_umc"
+                              class="form-select form-select-sm form-select-solid border" data-control="select2"
+                              data-placeholder="Seleccionar UMC" disabled>
+                        <option></option>
+                        <option value="{{umc.Id}}" *ngFor="let umc of this.listaUmc">{{umc.Unidad}} - {{umc.Descripcion}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-2">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_cantidad_comercial" class="form-label fw-boldest text-uppercase fs-8 m-0">Cantidad comercial:</label>
+                      <input #PartidaCantidadComercial type="number" step="0.1" class="form-control form-control-sm text-end text-muted" disabled id="detalle_cantidad_comercial"
+                             name="detalle_cantidad_comercial" placeholder="Cantidad comercial">
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-2">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_peso_kg" class="form-label fw-boldest text-uppercase fs-8 m-0">Peso en kgs:</label>
+                      <input #PartidaCantidadPeso type="number" step="0.1" class="form-control form-control-sm text-end text-muted" disabled id="detalle_peso_kg"
+                             name="detalle_peso_kg" placeholder="Peso en kgs">
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-sm-12 col-md-2">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_origen" class="form-label fw-boldest text-uppercase fs-8 m-0">País Org/Dest:</label>
+                      <select #PartidaOrigen id="detalle_origen" name="detalle_origen"
+                              class="form-select form-select-sm form-select-solid border" data-control="select2"
+                              data-placeholder="Seleccionar País Org/Dest" disabled>
+                        <option></option>
+                        <option value="{{pais.Id}}" *ngFor="let pais of this.listaPaises">({{pais.Codigo}}) {{pais.Nombre}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-2">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_vendedor" class="form-label fw-boldest text-uppercase fs-8 m-0">País Vend./Comp.:</label>
+                      <select #PartidaVendedor id="detalle_vendedor" name="detalle_vendedor"
+                              class="form-select form-select-sm form-select-solid border" data-control="select2"
+                              data-placeholder="Seleccionar País Vend./Comp." disabled>
+                        <option></option>
+                        <option value="{{pais.Id}}" *ngFor="let pais of this.listaPaises">({{pais.Codigo}}) {{pais.Nombre}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-2">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_uso" class="form-label fw-boldest text-uppercase fs-8 m-0">Uso:</label>
+                      <select id="detalle_uso" name="detalle_uso"
+                              class="form-select form-select-sm form-select-solid border" data-control="select2"
+                              data-placeholder="Seleccionar uso" disabled>
+                        <option></option>
+                        <option value="A">A - No aplica.</option>
+                        <option value="B">B - Vehículos automotores nuevos blindados cuando no existan vehículos sin blindar que correspondan al mismo modelo, año y versión del automóvil blindado, conforme al artículo 2, párrafo segundo de Ley del ISAN.</option>
+                        <option value="C">C - Vehículos con capacidad de carga mayor a 4250 Kilogramos, artículo 3, fracción II de la Ley del ISAN.</option>
+                        <option value="D">D - No aplica.</option>
+                        <option value="E">E - No aplica.</option>
+                        <option value="H">H - Humanos.</option>
+                        <option value="I">I - No aplica.</option>
+                        <option value="J">J - Juguetes.</option>
+                        <option value="K">K - No aplica.</option>
+                        <option value="L">L - No aplica.</option>
+                        <option value="MT">MT - Medio de transporte y mercancía.</option>
+                        <option value="O">O - Otros.</option>
+                        <option value="P">P - Camiones con capacidad de carga hasta de 4,250 Kilogramos, incluyendo los tipos de panel con capacidad máxima de tres pasajeros o remolques y semiremolques tipo vivienda. Conforme al artículo 3, fracción II de la Ley del ISAN.</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-2">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_estado" class="form-label fw-boldest text-uppercase fs-8 m-0">Estado:</label>
+                      <select id="detalle_estado" name="detalle_estado"
+                              class="form-select form-select-sm form-select-solid border" data-control="select2"
+                              data-placeholder="Seleccionar estado" disabled>
+                        <option></option>
+                        <option value="N">N – Nuevos.</option>
+                        <option value="U">U – Usados.</option>
+                        <option value="R">R – Reconstruidos.</option>
+                        <option value="RM">RM – Remanufacturados.</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-2">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_metodo" class="form-label fw-boldest text-uppercase fs-8 m-0">Método:</label>
+                      <select id="detalle_metodo" name="detalle_metodo"
+                              class="form-select form-select-sm form-select-solid border" data-control="select2"
+                              data-placeholder="Seleccionar método" disabled>
+                        <option></option>
+                        <option value="0">0 - VALOR COMERCIAL (CLAVE USADA SOLO A LA EXPORTACIÓN).</option>
+                        <option value="1">1 - VALOR DE TRANSACCIÓN DE LAS MERCANCÍAS.</option>
+                        <option value="2">2 - VALOR DE TRANSACCIÓN DE MERCANCÍAS IDÉNTICAS.</option>
+                        <option value="3">3 - VALOR DE TRANSACCIÓN DE MERCANCÍAS SIMILARES.</option>
+                        <option value="4">4 - VALOR DE PRECIO UNITARIO DE VENTA.</option>
+                        <option value="5">5 - VALOR RECONSTRUIDO.</option>
+                        <option value="6">6 - ÚLTIMO RECURSO.</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-2">
+                    <div class="fv-row mb-3">
+                      <label for="detalle_vinculacion" class="form-label fw-boldest text-uppercase fs-8 m-0">Vinculación:</label>
+                      <select id="detalle_vinculacion" name="detalle_vinculacion"
+                              class="form-select form-select-sm form-select-solid border" data-control="select2"
+                              data-placeholder="Seleccionar vinculación" disabled>
+                        <option></option>
+                        <option value="SI">SI</option>
+                        <option value="No">NO</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="separator mb-4 mt-3"></div>
+
+              <h5 class="fw-boldest text-uppercase mb-1 mt-3">Permisos</h5>
+              <div class="row">
+                <div class="col-sm-12 col-md-3">
+                  <div class="fv-row mb-3">
+                    <label for="detalle_permiso_clave" class="form-label fw-boldest text-uppercase fs-8 m-0">Clave:</label>
+                    <select #detallePermisoClave id="detalle_permiso_clave" name="detalle_permiso_clave"
+                            class="form-select form-select-sm" data-control="select2"
+                            data-placeholder="Seleccionar clave">
+                      <option></option>
+                      <option value="CA">CA</option>
+                      <option value="CM">CM</option>
+                      <option value="CP">CP</option>
+                      <option value="C1">C1</option>
+                      <option value="C2">C2</option>
+                      <option value="C6">C6</option>
+                      <option value="M6">M6</option>
+                      <option value="AV">AV</option>
+                      <option value="IM">IM</option>
+                      <option value="NM">NM</option>
+                      <option value="N3">N3</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-2">
+                  <div class="fv-row mb-3">
+                    <label for="detalle_permiso_numero" class="form-label fw-boldest text-uppercase fs-8 m-0">Numero:</label>
+                    <input #detallePermisoNumero type="text" class="form-control form-control-sm" id="detalle_permiso_numero"
+                           name="detalle_permiso_numero" placeholder="Numero">
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-2">
+                  <div class="fv-row mb-3">
+                    <label for="detalle_permiso_firma" class="form-label fw-boldest text-uppercase fs-8 m-0">Firma:</label>
+                    <input #detallePermisoFirma type="text" class="form-control form-control-sm" id="detalle_permiso_firma"
+                           name="detalle_permiso_firma" placeholder="Firma">
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-2">
+                  <div class="fv-row mb-3">
+                    <label for="detalle_permiso_valor_comercial" class="form-label fw-boldest text-uppercase fs-8 m-0">Valor comercial:</label>
+                    <input #detallePermisoValorComercial type="text" class="form-control form-control-sm" id="detalle_permiso_valor_comercial"
+                           name="detalle_permiso_valor_comercial" placeholder="Valor comercial">
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-2">
+                  <div class="fv-row mb-3">
+                    <label for="detalle_permiso_cantidad_tarifa" class="form-label fw-boldest text-uppercase fs-8 m-0">Cantidad tarifa:</label>
+                    <input #detallePermisoCantidadTarifa type="text" class="form-control form-control-sm" id="detalle_permiso_cantidad_tarifa"
+                           name="detalle_permiso_cantidad_tarifa" placeholder="Cantidad tarifa">
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-1 d-flex justify-content-center align-items-center pt-3" id="colPermisos" data-index="0">
+                  <button #btn_add_permiso id="btnAddPermisos" (click)="agregarDatosPermisos()" class="btn btn-primary btn-sm btn-icon" type="button"
+                          data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="top"
+                          title="Nuevo permiso"><i class="fas fa-plus-square fs-2"></i></button>
+                  <button #btn_update_permiso id="btnUpdatePermisos" (click)="actualizarDatosPermisos()" class="btn btn-primary btn-sm btn-icon me-3" type="button"
+                          data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="top"
+                          title="Actualizar permiso" style="display: none;"><i class="bi bi-pencil-square fs-2"></i></button>
+                  <button #btn_cancel_permiso id="btnCancelPermisos" (click)="limpiarPermisos()" class="btn btn-primary btn-sm btn-icon" type="button"
+                          data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="top"
+                          title="Cancelar edición" style="display: none;"><i class="bi bi-x-circle fs-2"></i></button>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <!--begin::Table-->
+                <table id="tabla-permisos" class="table table-striped table-row-bordered gy-5 gs-7 border rounded w-100" style="width: 100%;">
+                  <thead class="fs-8 text-gray-400 text-uppercase"></thead>
+                  <tbody class="fs-8"></tbody>
+                </table>
+                <!--end::Table-->
+              </div>
+
+              <div class="separator mb-4 mt-3"></div>
+
+              <ul class="nav nav-tabs nav-pills mb-5 fs-6">
+                <li class="nav-item">
+                  <a class="nav-link active" data-bs-toggle="tab" href="#tab_identificadores">Identificadores</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab_imagenes">Imagenes</a>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab_identificadores" role="tabpanel">
+                  <h5 class="fw-boldest text-uppercase mb-1">
+                    Identificadores
+                    <button #btnPallet class="btn btn-sm btn-light btn-icon-info btn-primary py-1" type="button" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="right" title="Pallet madera">
+                      <i class="fas fa-pallet"></i> Pallet
+                    </button>
+                  </h5>
+                  <div>
+                    <div class="row">
+                      <div class="col-sm-12 col-md-2">
+                        <div class="fv-row mb-3">
+                          <label for="detalle_caso" class="form-label fw-boldest text-uppercase fs-8 m-0">Caso:</label>
+                          <select id="detalle_caso" name="detalle_caso"
+                                  class="form-select form-select-sm" data-control="select2"
+                                  data-placeholder="Seleccionar caso" #detalleCaso>
+                            <option></option>
+                            <option value="AC">AC</option>
+                            <option value="AE">AE</option>
+                            <option value="AF">AF</option>
+                            <option value="AL">AL</option>
+                            <option value="BB">BB</option>
+                            <option value="BR">BR</option>
+                            <option value="B2">B2</option>
+                            <option value="CC">CC</option>
+                            <option value="MA">MA</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-3">
+                        <div class="fv-row mb-3">
+                          <label for="detalle_complemento" class="form-label fw-boldest text-uppercase fs-8 m-0 required">Complemento:</label>
+                          <input type="text" class="form-control form-control-sm" id="detalle_complemento"
+                                 name="detalle_complemento" placeholder="Complemento" #detalleComplemento required>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-3">
+                        <div class="fv-row mb-3">
+                          <label for="detalle_complemento2" class="form-label fw-boldest text-uppercase fs-8 m-0">Complemento 2:</label>
+                          <input type="text" class="form-control form-control-sm" id="detalle_complemento2"
+                                 name="detalle_complemento2" placeholder="Complemento 2" #detalleComplemento2>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-3">
+                        <div class="fv-row mb-3">
+                          <label for="detalle_complemento3" class="form-label fw-boldest text-uppercase fs-8 m-0">Complemento 3:</label>
+                          <input type="text" class="form-control form-control-sm" id="detalle_complemento3"
+                                 name="detalle_complemento3" placeholder="Complemento 3" #detalleComplemento3>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-1 d-flex justify-content-center align-items-center pt-3" id="colIdentificador" data-index="0">
+                        <button #btn_add_identificador id="btnAddIdentificador" (click)="agregarDatosIdentificador()" class="btn btn-primary btn-sm btn-icon" type="button"
+                                data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="top"
+                                title="Nuevo identificador"><i class="fas fa-plus-square fs-2"></i></button>
+                        <button #btn_update_identificador id="btnUpdateIdentificador" (click)="actualizarDatosIdentificador()" class="btn btn-primary btn-sm btn-icon me-3" type="button"
+                                data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="top"
+                                title="Actualizar identificador" style="display: none;"><i class="bi bi-pencil-square fs-2"></i></button>
+                        <button #btn_cancel_identificador id="btnCancelIdentificador" (click)="limpiarIdentificador()" class="btn btn-primary btn-sm btn-icon" type="button"
+                                data-bs-toggle="tooltip" data-bs-custom-class="tooltip-dark" data-bs-placement="top"
+                                title="Cancelar edición" style="display: none;"><i class="bi bi-x-circle fs-2"></i></button>
+                      </div>
+                    </div>
+                    <div class="table-responsive">
+                      <!--begin::Table-->
+                      <table id="tabla-identificadores" class="table table-striped table-row-bordered gy-5 gs-7 border rounded w-100" style="width: 100%;">
+                        <thead class="fs-8 text-gray-400 text-uppercase"></thead>
+                        <tbody class="fs-8"></tbody>
+                      </table>
+                      <!--end::Table-->
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="tab_imagenes" role="tabpanel">
+                  <section #sctnImagenes class="overflow-auto row d-flex justify-content-start align-items-center mh-700px"></section>
+                </div>
+              </div>
+
+              <div class="separator mb-4 mt-3"></div>
+              <div class="fv-row">
+                <label for="detalle_observaciones" class="form-label fw-boldest text-uppercase fs-8 m-0">Observaciones:</label>
+                <textarea #PartidaNotas id="detalle_observaciones" name="detalle_observaciones"
+                          class="form-control form-control-sm" data-kt-autosize="true"
+                          placeholder="Observaciones" rows="4"></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer pt-4 text-end" id="drawer_partida_footer">
+      <button class="btn btn-active-light-primary me-2" type="button" data-kt-drawer-dismiss="true">Cerrar</button>
+      <button id="btn-eliminar-partida" class="btn btn-danger me-2" type="button" style="display:none;">Eliminar partida</button>
+      <button id="btn-agregar-imagenes" class="btn btn-info me-2" type="button">Agregar imágenes</button>
+      <button #btnSubmitPartida class="btn btn-primary" type="submit" form="frmPartida">Guardar</button>
+    </div>
+  </div>
+</div>
+<!--end::View component-->
+<!--comentario: Fracciones arancelarias-->
+<div
+  id="fraccion_drawer"
+  class="bg-white"
+  data-kt-drawer="true"
+  data-kt-drawer-activate="true"
+  data-kt-drawer-toggle="#btn_add_fraccion_drawer"
+  data-kt-drawer-close="#btn_close_fraccion_drawer"
+  data-kt-drawer-overlay="false"
+  data-kt-drawer-width="{default:'100%', 'md': '50%'}"
+  data-kt-drawer-direction="start"
+>
+  <div class="card shadow-none rounded-0 w-100">
+    <div class="card-header rounded-0" style="background: rgb(1,30,65)">
+      <h3 class="card-title fw-bolder text-white">Buscar fracción</h3>
+      <div class="card-toolbar">
+        <div class="btn btn-sm btn-icon btn-white" id="btn_close_fraccion_drawer">
+          <span class="svg-icon svg-icon-2 text-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+              <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <div class="fv-row mb-5">
+            <label for="fraccion_numero" class="form-label fw-boldest text-uppercase fs-8 m-0">Fracción:</label>
+            <input #fraccionNumero type="text" class="form-control form-control-sm" id="fraccion_numero"
+                   name="fraccion_numero" placeholder="Fracción">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="fv-row mb-5">
+            <label for="fraccion_descripcion" class="form-label fw-boldest text-uppercase fs-8 m-0">Descripción:</label>
+            <input #fraccionDescripcion type="text" class="form-control form-control-sm" id="fraccion_descripcion"
+                   name="fraccion_descripcion" placeholder="Descripción">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="fv-row mb-5">
+            <label for="fraccion_umt" class="form-label fw-boldest text-uppercase fs-8 m-0 required">UMT:</label>
+            <select #fraccionUmt id="fraccion_umt" name="fraccion_umt"
+                    class="form-select form-select-sm" data-control="select2" data-allow-clear="true"
+                    data-placeholder="Seleccionar fuente">
+              <option></option>
+              <option value="01">01 KILO</option>
+              <option value="02">02 GRAMO</option>
+              <option value="03">03 METRO LINEAL</option>
+              <option value="04">04 METRO CUADRADO</option>
+              <option value="05">05 METRO CÚBICO</option>
+              <option value="06">06 PIEZA</option>
+              <option value="07">07 CABEZA</option>
+              <option value="08">08 LITRO</option>
+              <option value="09">09 PAR</option>
+              <option value="10">10 KILOWATT</option>
+              <option value="11">11 MILLAR</option>
+              <option value="12">12 JUEGO</option>
+              <option value="13">13 KILOWATT/HORA</option>
+              <option value="14">14 TONELADA</option>
+              <option value="15">15 BARRIL</option>
+              <option value="16">16 GRAMO NETO</option>
+              <option value="17">17 DECENAS</option>
+              <option value="18">18 CIENTOS</option>
+              <option value="19">19 DOCENAS</option>
+              <option value="20">20 CAJA</option>
+              <option value="21">21 BOTELLA</option>
+              <option value="22">22 CARAT</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <!--begin::Table-->
+        <table id="tabla-fracciones" class="table table-sm table-row-bordered gy-5 gs-7 border rounded w-100" style="width: 100%;">
+          <thead class="fs-8 text-gray-400 text-uppercase"></thead>
+          <tbody class="fs-8"></tbody>
+        </table>
+        <!--end::Table-->
+      </div>
+    </div>
+  </div>
+</div>
+<!--comentario: Numeros de parte-->
+<div
+  id="noParte_drawer"
+  class="bg-white"
+  data-kt-drawer="true"
+  data-kt-drawer-activate="true"
+  data-kt-drawer-toggle="#noParteDrawer"
+  data-kt-drawer-close="#btn_close_parte_drawer"
+  data-kt-drawer-overlay="false"
+  data-kt-drawer-width="{default:'100%', 'md': '50%'}"
+  data-kt-drawer-direction="start"
+>
+  <div class="card shadow-none rounded-0 w-100">
+    <div class="card-header rounded-0" style="background: rgb(1,30,65)">
+      <h3 class="card-title fw-bolder text-white">Buscar número de parte</h3>
+      <div class="card-toolbar">
+        <div class="btn btn-sm btn-icon btn-white" id="btn_close_parte_drawer">
+          <span class="svg-icon svg-icon-2 text-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+              <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <div class="fv-row mb-5">
+            <label for="parteNumeroFiltro" class="form-label fw-boldest text-uppercase fs-8 m-0">Número de parte:</label>
+            <input #parteNumeroFiltro type="text" class="form-control form-control-sm" id="parteNumeroFiltro"
+                   name="parteNumeroFiltro" placeholder="Número de parte">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="fv-row mb-5">
+            <label for="parteDescripcionFiltro" class="form-label fw-boldest text-uppercase fs-8 m-0">Descripción:</label>
+            <input #parteDescripcionFiltro type="text" class="form-control form-control-sm" id="parteDescripcionFiltro"
+                   name="parteDescripcionFiltro" placeholder="Descripción">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="fv-row mb-5">
+            <label for="parteFraccionFiltro" class="form-label fw-boldest text-uppercase fs-8 m-0">Fracción:</label>
+            <input #parteFraccionFiltro type="text" class="form-control form-control-sm" id="parteFraccionFiltro"
+                   name="parteFraccionFiltro" placeholder="Fracción">
+          </div>
+        </div>
+
+      </div>
+      <div class="table-responsive">
+        <!--begin::Table-->
+        <table id="tabla-partes" class="table table-sm table-row-bordered gy-5 gs-7 border rounded w-100" style="width: 100%;">
+          <thead class="fs-8 text-gray-400 text-uppercase"></thead>
+          <tbody class="fs-8"></tbody>
+        </table>
+        <!--end::Table-->
+      </div>
+    </div>
+  </div>
+</div>
